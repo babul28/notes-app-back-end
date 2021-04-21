@@ -55,9 +55,9 @@ const getAllNotesHandler = () => ({
 const getNoteByIdHandler = (req, h) => {
   const { id } = req.params;
 
-  const note = notes.filter((note) => note.id === id)[0];
+  const note = notes.filter((item) => item.id === id)[0];
 
-  if (note === 'undefined') {
+  if (note === undefined) {
     const response = h.response({
       status: 'fail',
       message: 'Catatan tidak ditemukan',
